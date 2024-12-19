@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <title>Mga Aralin</title> 
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <style>
+
+
+ @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Poppins:wght@300;400&display=swap');
+ 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background: #1e1f21;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            gap: 30px;
+            overflow-x: hidden;
+            overflow-y: auto; /* Added to remove vertical scrollbar */
+            font-family: 'Poppins', sans-serif;
+        }
+
+
+
+
+        h1, h2 {
+            font-family: 'Cinzel', serif;
+            color: #ffff;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-top: 20px;
+            text-shadow: 2px 2px #d9ac80;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin: 10px 0;
+            text-shadow: 1px 1px #d9ac80;
+        }
+.header {
+    display: flex;
+    flex-direction: column; /* Stacks the h1 and p vertically */
+    justify-content: center; /* Centers vertically */
+    align-items: center; /* Centers horizontally */
+    padding: 20px 20px;
+    border-radius: 10px;
+    width: 80%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    top: 20px;
+      background: hsl(0, 0%, 10%);
+
+}
+
+
+.header div {
+    font-size: 1rem;
+    text-align: center; /* Centers the paragraph text */
+    margin-top: 20px; /* Adds space between the header and the paragraph */
+    padding: 0 20px; /* Optional: Adjusts the padding for better readability */
+
+}
+
+
+        /* Flex Card Section */
+        .wrapper-flex {
+            width: 140%;            
+            @media (max-width: 480px) {height: 1500px;}
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+
+        }
+
+
+/* I-AUTO MO YUNG HIDDEN SA Y PARA MAGKARON NG SCROLL */
+        .container {
+            position: relative;
+            @media (max-width: 1900px) {left: 0px;}
+            @media (max-width: 480px) {left: -20px;}
+            padding: 50px;
+            @media (max-width: 1900px) {height: 400px;}
+            @media (max-width: 1024px) {height: 800px;}
+            @media (max-width: 480px) {height: 1900px;}
+		    max-width: 100%;
+            display: flex;
+            margin: 20px;
+            justify-content: center;
+            overflow-x: hidden; /* Keeps horizontal scroll disabled */
+            overflow-y: hidden; /* Added to prevent vertical overflow */
+        }
+        .card {
+            width: 50px;
+            border-radius: 2rem;
+            background-size: cover;
+            cursor: pointer;
+            margin: 0 10px;
+            display: flex;
+            align-items: flex-end;
+            transition: 0.6s cubic-bezier(0.28, -0.03, 0, 0.99);
+            box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.8);
+        }
+        .row {
+            color: rgb(0, 0, 0);
+            display: flex;
+            top: -100px;
+            left: 50%;
+            width: 500px;
+            height: 120px;
+        }
+        .icon {
+            background: #C67C46;
+            position: relative;
+            border-radius: 100%;    
+            @media (max-width: 1900px) {left: 10%;}
+            @media (max-width: 480px) {left: 0px;}
+            width: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 15px;
+        }
+        .description {
+            position: relative;
+            top: 10px;
+            @media (max-width: 1900px) {left: 100px;}
+            @media (max-width: 480px) {left: -20px;}
+            display: flex;
+            overflow: hidden;           
+            width: 150px;
+            height: 60px;
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.3s ease;
+        }
+        .description h4 {
+            text-transform: uppercase;
+        }
+        input {
+            display: none;
+        }
+        input:checked + label {
+          @media (max-width: 1900px) {width: 500px;}
+          @media (max-width: 480px) {width: 300px;}
+          height: 400px;          
+        }
+        input:checked + label .description {
+            opacity: 1;
+            width: 100px;                         
+        }
+
+        /* Main Lesson Section */
+/* Main Lesson Section */
+.wrapper {
+  @media (max-width: 1900px) { width: 80%;}
+  @media (max-width: 1024px) { width: 100%;}
+  @media (max-width: 480px) { width: 70%;}
+  
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centers the lessons horizontally */
+    align-items: center; /* Centers the lessons vertically */
+    gap: 20px;
+    position: relative;
+    padding: 10px 0;
+
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    scroll-behavior: smooth; /* Add smooth scrolling effect */
+
+    max-width: 100vw;  /* Prevent content from exceeding the screen width */
+    height: auto;      /* Adjust height based on content */
+    box-sizing: border-box; /
+}
+body::after {
+    content: '';
+    display: block;
+    height: 50px; /* Adjust the height as needed */
+    width: 100%;
+}
+
+
+
+.lesson:last-child {
+    margin-right: 0; /* Remove right margin on the last lesson */
+    display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+
+    min-width: 300px;
+
+           margin-right: 20px; 
+            transition: transform 0.5s ease-in-out;
+
+
+flex-shrink: 0; /* Prevent shrinking of lessons */
+    width: calc(100% - 20px); /* Adjust width dynamically, keeping space for margins */
+    margin: 10px;   /* Ensure consistent spacing */
+    box-sizing: border-box; /* Avoid content overflow caused by padding/margin */
+}
+
+
+.box {
+    position: relative;
+    width: 250px;
+    height: 200px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.658);
+}
+        .box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background: linear-gradient(transparent, rgb(27, 23, 4));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: #fff;
+            text-align: center;
+            transition: height 0.5s ease;
+            padding: 0 20px;
+        }
+        .overlay h3 {
+            margin-bottom: 10px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .overlay p {
+            font-size: 14px;
+        }
+        .box:hover img {
+            transform: scale(1.1);
+        }
+        .box:hover .overlay {
+            height: 100%;
+        }
+
+        .connector {
+            position: absolute;
+            top: 50%;
+            left: 100%;
+            transform: translateY(-50%);
+            width: 0;
+            height: 5px;
+            background: #00d4ff;
+            display: none;
+        }
+        .connector.active {
+            display: block;
+            animation: connectLine 1s ease-in-out forwards;
+        }
+        @keyframes connectLine {
+            0% {
+                width: 0;
+            }
+            100% {
+                width: 100px;
+            }
+        }
+        .complete-btn {
+            padding: 8px 12px;
+            margin-top: 10px;
+            background: #C67C46;
+            color: #050505;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+/* Arrows for navigation */
+.arrow {
+    display: none;
+    position: absolute;
+    top: hidden;
+    bottom: 10px; /* Position the arrows at the bottom */
+    transform: translateY(0);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.3s ease;
+}
+
+.arrow.left {
+    left: 10px;
+}
+
+.arrow.right {
+    right: 10px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1900px) {
+    .arrow {
+        display: block;
+        font-size: 18px;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 768px) {
+    .wrapper-flex {
+        flex-direction: column; /* Stack slides vertically */
+        align-items: center; /* Center the slides horizontally */
+        gap: 20px; /* Add space between slides */
+    }
+
+    .container {
+        flex-direction: column; /* Stack the slides vertically */
+        align-items: center; /* Center slides */
+        gap: 20px; /* Add space between the slides */
+        width: 100%; /* Full width on small screens */
+
+    }
+
+    .card {
+        width: 90%; /* Set the card width to 90% to fit the screen */
+        margin: 10px 0; /* Add margin between cards */
+    }
+
+    /* Ensuring the card content (description) is displayed in a smaller container on mobile */
+    .description {
+        width: 100%; /* Adjust description to full width for better readability */
+    }
+}
+
+/* For very small screens (max-width: 480px) */
+@media (max-width: 480px) {
+    .lesson {
+        min-width: 100%; /* Stack lessons vertically */
+        margin-right: 0;
+   width: 90%; /* Make lessons smaller to fit on small screens */
+        margin: 100px
+    }
+}
+
+
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000; /* Ensure it appears above everything else */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #DAA520; /* Semi-transparent black background */
+}
+
+.modal-content {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #222;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    color: #fff;
+    max-width: 500px;
+    width: 100%;
+}
+
+.modal-content button {
+    margin-top: 10px;
+    padding: 20px 20px;
+    background-color: #c3a600;
+    
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal-content button:hover {
+    background-color: #2b2715;
+}
+
+.slider-container {
+    position: relative; /* Make the container position relative to position elements inside it */
+    width: 100%; /* Example width */
+    height: 800px; /* Example height */
+    overflow: hidden;
+}
+
+.slide-btn {
+    position: absolute; /* Position the button absolutely within the container */
+    left: 0px; /* Adjust this value to move the button closer/further from the right edge */
+    top: 0%; /* Adjust to vertically center the button */
+    transform: translateX(-50%), translateY(-50%); /* Fine-tune the vertical alignment */
+    background-color: #9c781e; /* Example button color */
+    color: white;
+    padding: 20px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+
+.slider-btn-below:hover {
+    background: #c3a600;
+}
+
+
+
+
+    </style>
+</head>
+<body>
+    <!-- Flex Card Section -->
+
+
+  <!-- Header Section -->
+    <div class="header">
+        <h1>UNANG HAKBANG SA PAGBASA</h1>
+        <div>Magsimula ng paglalakbay sa pagbabasa gamit ang mga araling nakalaan para sa iyong tagumpay.</di>
+    </div>
+
+    <div>
+    <button onclick="window.location.href='../index.html'" style="
+      background-color: #d9ac80;
+      color: #fff;
+      position: absolute;
+      top: 5%;
+      right: 2%;
+      padding: 10px 20px;
+      font-family: 'Poppins', sans-serif;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s;
+    " 
+    onmouseover="this.style.backgroundColor='#b58660'" 
+    onmouseout="this.style.backgroundColor='#d9ac80'">X</button>
+  </div>
+
+<div class="wrapper-flex">
+    <div class="container" id="container">
+        <input type="radio" name="slide" id="c1" checked>
+        <label for="c1" class="card" style="background: url('ma.jpg') center/cover;">
+            <div class="row">
+                <div class="icon">Mm</div>
+                <div class="description">                   
+                    <button class="slide-btn" onclick="redirectToLesson(1)">Aralin</button>
+
+                </div>
+            </div>
+        </label>
+
+        <input type="radio" name="slide" id="c2">
+        <label for="c2" class="card" style="background: url('s.jpg') center/cover;">
+            <div class="row">
+                <div class="icon">Ss</div>
+                <div class="description">                    
+                    <button class="slide-btn" onclick="redirectToLesson(2)">Aralin</button>
+                </div>
+            </div>
+        </label>
+
+
+        <!-- Additional Wrapping Slides -->
+        <input type="radio" name="slide" id="c3">
+        <label for="c3" class="card" style="background: url('a.jpg') center/cover;">
+            <div class="row">
+                <div class="icon">Aa</div>
+                <div class="description">
+            <button class="slide-btn" onclick="redirectToLesson(3)">Aralin</button>
+                </div>
+            </div>
+        </label>
+
+        <input type="radio" name="slide" id="c4">
+        <label for="c4" class="card" style="background: url('i.jpg') center/cover;">
+            <div class="row">
+                <div class="icon">Ii</div>
+                <div class="description">
+            <button class="slide-btn" onclick="redirectToLesson(4)">Aralin</button>
+                </div>
+
+            </div>
+        </label>
+
+        <input type="radio" name="slide" id="c5">
+        <label for="c5" class="card" style="background: url('o.jpg') center/cover;">
+            <div class="row">
+                <div class="icon">Oo</div>
+                <div class="description">
+            <button class="slide-btn" onclick="redirectToLesson(5)">Aralin</button>
+                </div>
+            </div>
+        </label>
+
+        <input type="radio" name="slide" id="c6">
+        <label for="c6" class="card" style="background: url('u.jpg') center/cover;">
+            <div class="row">
+                <div class="icon">Uu</div>
+                <div class="description">
+            <button class="slide-btn" onclick="redirectToLesson(6)">Aralin</button>
+                </div>
+            </div>
+        </label>
+    </div>
+</div>
+
+
+
+        </div>
+
+
+    </div>
+
+  <div class="header">
+        <h2>SIMULANG BASAHIN</h2>
+        <p>Ipinapakita rito ang sunod-sunod na mga aralin upang gabayan ka sa iyong pag-aaral.</p>
+    </div>
+
+
+    <!-- Lesson Progress Section -->
+    <div class="wrapper">
+        <button class="arrow left" onclick="scrollLeft()">&#8249;</button>
+        <div class="lesson" id="lesson1">
+            <div class="box">
+                <img src="ma.png" alt="Lesson 1">
+                <div class="overlay">
+                    <h3>Aralin: "Ma"</h3>
+
+                    <button class="complete-btn" onclick="completeLesson(1)">Alamin</button>
+                </div>
+            </div>
+            <div class="connector" id="connector1"></div>
+        </div>
+        <div class="lesson" id="lesson2">
+            <div class="box">
+                <img src="sa.png" alt="Lesson 2">
+                <div class="overlay">
+                    <h3>Aralan: "Sa"</h3>
+
+                    <button class="complete-btn" onclick="completeLesson(2)">Alamin</button>
+                </div>
+            </div>
+            <div class="connector" id="connector2"></div>
+        </div>
+        <div class="lesson" id="lesson3">
+            <div class="box">
+                <img src="mi.png" alt="Lesson 3">
+                <div class="overlay">
+                    <h3>Aralin: "Mi"</h3>
+
+                    <button class="complete-btn" onclick="completeLesson(3)">Alamin</button>
+                </div>
+            </div>
+            <div class="connector" id="connector3"></div>
+        </div>
+        <div class="lesson" id="lesson4">
+            <div class="box">
+                <img src="si.png" alt="Lesson 4">
+                <div class="overlay">
+                    <h3>Aralin: "Si"</h3>
+
+                    <button class="complete-btn" onclick="completeLesson(4)">Alamin</button>
+                </div>
+            </div>
+
+        </div>
+      
+
+        <button class="arrow right" onclick="scrollRight()">&#8250;</button>
+    </div>
+
+<div id="popupModal" class="modal">
+    <div class="modal-content">
+        <p id="popupMessage">You must complete the previous lesson first!</p>
+        <button onclick="closePopup()">OK</button>
+    </div>
+</div>
+
+
+
+    <script>
+
+// Track completion status of lessons
+const lessonCompletion = [false, false, false, false]; // Updated to match 4 lessons
+
+
+function completeLesson(lessonId) {
+    // Check if the lesson is the first one or if the previous lesson is completed
+    if (lessonId === 1 || lessonCompletion[lessonId - 2]) {
+        const connector = document.getElementById('connector' + lessonId);
+        connector.classList.add('active'); // Activate animation
+        lessonCompletion[lessonId - 1] = true; // Mark this lesson as completed
+    } else {
+        // Show the popup message
+        showPopup(`You must complete Lesson ${lessonId - 1} first!`);
+    }
+}
+
+
+
+
+
+        let currentIndex = 0; // Tracks the current position (first lesson by default)
+        const lessonWrapper = document.querySelector('.wrapper'); // Container
+        const lessons = document.querySelectorAll('.lesson'); // All lessons
+        const totalLessons = lessons.length;
+
+        function updateLessonsPosition() {
+            const lessonWidth = lessons[0].offsetWidth + 20; // Width of one lesson, including margin
+            const visibleWidth = lessonWrapper.offsetWidth; // Width of the visible container
+            const maxVisibleLessons = Math.floor(visibleWidth / lessonWidth); // Number of lessons that fit in view
+            const maxIndex = totalLessons - maxVisibleLessons; // Max possible index
+
+            // Clamp currentIndex within bounds
+            currentIndex = Math.max(0, Math.min(currentIndex, maxIndex));
+
+            // Calculate the translation value
+            const translateValue = -currentIndex * lessonWidth;
+
+            // Apply transformation to each lesson
+            lessons.forEach(lesson => {
+                lesson.style.transform = `translateX(${translateValue}px)`;
+            });
+        }
+
+        function scrollLeft() {
+            // Decrease the current index, and ensure it doesn't go below 0
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateLessonsPosition();
+            }
+        }
+
+        function scrollRight() {
+            // Increase the current index, and ensure it doesn't exceed maxIndex
+            const lessonWidth = lessons[0].offsetWidth + 20;
+            const visibleWidth = lessonWrapper.offsetWidth;
+            const maxVisibleLessons = Math.floor(visibleWidth / lessonWidth);
+            const maxIndex = totalLessons - maxVisibleLessons;
+
+            if (currentIndex < maxIndex) {
+                currentIndex++;
+                updateLessonsPosition();
+            }
+        }
+
+        // Initialize position on page load
+        updateLessonsPosition();
+
+        // Add event listeners to the arrow buttons
+        document.querySelector('.arrow.left').addEventListener('click', scrollLeft);
+        document.querySelector('.arrow.right').addEventListener('click', scrollRight);
+
+function redirectToLesson(lessonId) {
+    // Define the mapping of lesson IDs to HTML file paths
+    const lessonMap = {
+        1: "aralinm.html",
+        2: "aralins.html",
+        3: "aralina.html",
+        4: "aralini.html",
+        5: "aralino.html",
+        6: "aralinu.html",
+    };
+
+    // Redirect to the corresponding HTML file
+    if (lessonMap[lessonId]) {
+        window.location.href = lessonMap[lessonId];
+    } else {
+        console.error(`No HTML file mapped for lesson ID: ${lessonId}`);
+    }
+}
+
+
+function completeLesson(lessonId) {
+    // Define the mapping of lesson IDs to HTML file paths
+    const lessonMap = {
+        1: "../Lecture Ma/basama.html",
+        2: "../Lecture Sa/basasa.html",
+        3: "../Lecture Mi/basami.html",
+        4: "../Lecture Si/basasi.html",
+
+    };
+
+    // Redirect to the corresponding HTML file
+    if (lessonMap[lessonId]) {
+        window.location.href = lessonMap[lessonId];
+    } else {
+        console.error(`No HTML file mapped for lesson ID: ${lessonId}`);
+    }
+}
+
+    </script>
+</body>
+</html>
